@@ -1,0 +1,35 @@
+{
+  "name": "@isekaimaouyoki-sama/fastify-lrucache",
+  "version": "1.0.0",
+  "description": "This package is a wrapper for lru-cache",
+  "exports": {
+    "import": "./index.js",
+    "require": "./index.cjs"
+  },
+  "scripts": {
+    "preinstall": "npx rollup index.js --file index.cjs --format cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isekaimaou1109/fastify-lrucache.git"
+  },
+  "homepage": "https://github.com/isekaimaou1109/fastify-lrucache#readme",
+  "bugs": {
+    "url": "https://github.com/isekaimaou1109/fastify-lrucache/issues",
+    "email": "nhat11092000@gmail.com"
+  },
+  "keywords": [
+    "cache",
+    "lru-cache",
+    "fastify-lrucache"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify-plugin": "^4.5.1",
+    "lru-cache": "^10.2.0"
+  },
+  "devDependencies": {
+    "rollup": "^4.13.2"
+  }
+}
