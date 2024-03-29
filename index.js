@@ -7,7 +7,12 @@ function lruCachePlugin(fastify, options, done) {
     allowStale: false,
     max: 500,
     maxSize: 5000, 
-    ttlAutopurge: true
+    ttlAutopurge: true,
+    sizeCalculation: (value, key) => {
+      return 1
+    },
+    updateAgeOnGet: true,
+    updateAgeOnHas: true,
   }
   const cacher = new LRUCache(Object.freeze({
     ...defaultOtps,
