@@ -1,16 +1,20 @@
 import wrapper from 'fastify-plugin'
 import { LRUCache } from 'lru-cache'
 
-function lruCachePlugin(fastify, options) {
+function lruCachePlugin(fastify, options, done) {
   let defaultOtps = {
     ttl: 1000 * 60 * 5,
-    allowStale: false
+    allowStale: false,
+    max: 500,
+    maxSize: 5000, 
+    ttlAutopurge: true
   }
   const cacher = new LRUCache(Object.freeze({
     ...defaultOtps,
     ...options
   }))
   fastify.decorate('cacher', cacher)
+  done()
 }
 
 export default wrapper(lruCachePlugin, {
