@@ -1,6 +1,7 @@
 {
   "name": "@isekaimaouyoki-sama/fastify-lrucache",
   "version": "1.0.0",
+  "type": "module",
   "description": "This package is a wrapper for lru-cache",
   "exports": {
     "import": "./index.js",
